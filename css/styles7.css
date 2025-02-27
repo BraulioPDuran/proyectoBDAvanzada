@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#datos {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dato-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-item p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.dato-item p:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último párrafo */
+}
+
+.dato-item strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo adicional para resaltar el top 3 */
+.dato-item:nth-child(1) {
+    background-color: #e8f5e9; /* Verde claro para el primer lugar */
+}
+
+.dato-item:nth-child(2) {
+    background-color: #fff3e0; /* Naranja claro para el segundo lugar */
+}
+
+.dato-item:nth-child(3) {
+    background-color: #ffe0e0; /* Rojo claro para el tercer lugar */
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA 3</title>
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+    <div id="datos">
+        <!-- Aquí se mostrarán los datos -->
+    </div>
+
+    <script>
+        // Llamada AJAX para obtener datos desde PHP
+        fetch('../conexiones/getdata3.php')
+            .then(response => response.json())
+            .then(data => {
+                const datosDiv = document.getElementById('datos');
+                data.forEach(item => {
+                    datosDiv.innerHTML += `
+                        <div class="dato-item">
+                            <p><strong>Cuatrimestre:</strong> ${item.cuatrimestre}</p>
+                            <p><strong>Asignaturas:</strong> ${item.nombres_asignaturas}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <a href="index.html">VOLVER A MENU</a>
+    
+</body>
+</html>

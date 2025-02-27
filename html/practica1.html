@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 1</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+    <div id="datos">
+        <!-- Aquí se mostrarán los datos -->
+    </div>
+
+    <script>
+        // Llamada AJAX para obtener datos desde PHP
+        fetch('../conexiones/getdata.php')
+            .then(response => response.json())
+            .then(data => {
+                const datosDiv = document.getElementById('datos');
+                data.forEach(item => {
+                    datosDiv.innerHTML += `
+                        <div class="dato-item">
+                            <p><strong>Categoría:</strong> ${item.categoria}</p>
+                            <p><strong>Nombre:</strong> ${item.nombre} ${item.apellido1} ${item.apellido2}</p>
+                            <p><strong>Materias Impartidas:</strong> ${item.materias_impartidas}</p>
+                            <p><strong>Teléfonos de Contacto:</strong> ${item.telefonos_contacto}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <a href="index.html">VOLVER A MENU</a>
+</body>
+</html>

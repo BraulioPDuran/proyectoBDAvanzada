@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA 6</title>
+    <link rel="stylesheet" href="../css/styles6.css">
+</head>
+<body>
+    <div id="datos">
+        <!-- Aquí se mostrarán los datos -->
+    </div>
+
+    <script>
+        // Llamada AJAX para obtener datos desde PHP
+        fetch('../conexiones/getdata6.php')
+            .then(response => response.json())
+            .then(data => {
+                const datosDiv = document.getElementById('datos');
+                data.forEach(item => {
+                    datosDiv.innerHTML += `
+                        <div class="dato-item">
+                            <p><strong>Total alumnos:</strong> ${item.total_alumnos}</p>
+                            <p><strong>Total becados:</strong> ${item.alumnos_becados}</p>
+                            <p><strong>Porcentaje becados: %</strong>${item.porcentaje_becados}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <a href="index.html">VOLVER A MENU</a>
+</body>
+</html>

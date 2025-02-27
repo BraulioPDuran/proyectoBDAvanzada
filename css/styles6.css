@@ -1,0 +1,32 @@
+
+    #datos {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dato-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+
+    .dato-item p {
+        margin: 8px 0;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .dato-item p strong {
+        color: #2c3e50; /* Un color más oscuro para los títulos */
+    }
+
+    .dato-item p:nth-child(3) {
+        color: #27ae60; /* Color verde para el porcentaje */
+        font-weight: bold;
+    }
