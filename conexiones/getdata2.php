@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT CONCAT(a.nombre, ' ',a.apellido1, ' ',a.apellido2) AS nombre_completo FROM alumno a"; // Cambia 'tu_tabla' por el nombre de tu tabla
+$sql = "SELECT CONCAT(a.nombre, ' ',a.apellido1, ' ',a.apellido2) AS nombre_completo, a.email, a.direccion, a.codigoPostal FROM alumno a"; // Cambia 'tu_tabla' por el nombre de tu tabla
 $result = $conn->query($sql);
 
 $data = array();
