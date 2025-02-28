@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT a.cuatrimestre, GROUP_CONCAT(a.nombre ,', ') AS nombres_asignaturas
+$sql = "SELECT a.cuatrimestre, GROUP_CONCAT(a.nombre ,' ') AS nombres_asignaturas
 FROM asignatura a
 GROUP BY a.cuatrimestre"; // Cambia 'tu_tabla' por el nombre de tu tabla
 $result = $conn->query($sql);

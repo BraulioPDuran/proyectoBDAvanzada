@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT a.nombre AS nombre_asignatura, GROUP_CONCAT(CONCAT (' ',al.nombre, ' (',m.nota,')')) AS notas_alumno
+$sql = "SELECT a.nombre AS nombre_asignatura, GROUP_CONCAT(CONCAT (' ',al.nombre, ' ',al.apellido1, ' ',al.apellido2 ,' (',m.nota,')')) AS notas_alumno
 FROM asignatura a
 JOIN matricula m ON a.idAsignatura = m.idAsignatura
 JOIN alumno al ON m.idAlumno = al.idAlumno

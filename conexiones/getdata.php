@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT p.categoria, p.nombre, p.apellido1, p.apellido2, GROUP_CONCAT(a.nombre  ,', ') AS materias_impartidas, GROUP_CONCAT(DISTINCT t.telefono, ', ') AS telefonos_contacto
+$sql = "SELECT p.categoria, p.nombre, p.apellido1, p.apellido2, GROUP_CONCAT(a.nombre  ,' ') AS materias_impartidas, GROUP_CONCAT(DISTINCT t.telefono, ' ') AS telefonos_contacto
 FROM asignatura a
 JOIN impartir i ON a.idAsignatura = i.idAsignatura
 JOIN profesor p ON i.idProfesor = p.idProfesor

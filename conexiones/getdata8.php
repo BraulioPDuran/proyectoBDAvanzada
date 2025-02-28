@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT CONCAT(al.nombre,' ', al.apellido1,' ', al.apellido2) AS n_alumnos, AVG(m.nota) AS promedio
+$sql = "SELECT CONCAT(al.nombre,' ', al.apellido1,' ', al.apellido2) AS n_alumnos, ROUND(AVG(m.nota), 2) AS promedio
 FROM alumno al
 JOIN matricula m ON al.idAlumno = m.idAlumno
 GROUP BY n_alumnos
